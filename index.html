@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissor Game</title>
+  <style>
+    /*.container {
+    text-align: center;
+  }
+  
+  .choices {
+    margin-top: 20px;
+  }
+  
+  .choice {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  #result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }*/
+
+  body{
+    background: linear-gradient(to bottom, #FFD700, #008000);
+  }
+
+  h1{
+    text-align: center;
+  }
+  .game-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .player, .ai, .result {
+    text-align: center;
+  }
+  
+  .player img, .ai img {
+    width: 100px;
+    cursor: pointer;
+    margin: 10px auto;
+  }
+  
+  .result-message {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .border{
+    box-shadow: 5px 5px 5px black;
+    border-radius: 15px;
+    border: 2px black solid;
+    margin: 20px;
+  }
+
+  .ai{
+    border: 2px solid black;
+    background-color: #71b280;
+    background-image: linear-gradient(135deg, #71b280, #a8caba);
+    width: 200px;
+  }
+
+  .flex{
+    max-width: 800px;
+    box-sizing: content-box;
+    background-color: aliceblue;
+    margin: auto;
+  }
+
+.flex div{
+    display: flex;
+    flex-direction: column;
+}
+  
+@media only screen and (max-width: 400px) {
+      /* Adjust styles for smaller screens */
+      .player img,
+      .ai img {
+        width: 80px;
+      }
+
+      .game-container {
+        flex-direction: column;
+        margin-top: 20px;
+      }
+
+      .border {
+        margin: 10px;
+      }
+
+      .ai {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Rock Paper Scissor Game</h1>
+<a href="index.html"><button style="margin: auto; display: block;">Restart</button></a>
+<div class="flex">
+    <div class="game-container">
+        <div class="player">
+          <h2>Choose Your Pick</h2>
+            <div class="border">
+                <img src="rock.png" alt="Rock" onclick="play('rock')">
+                <img src="paper.png" alt="Paper" onclick="play('paper')">
+                <img src="scissor.png" alt="Scissor" onclick="play('scissor')">
+            </div>
+        </div>
+        <div class="ai">
+            <h2>AI</h2>
+            <img src="" alt="AI Pick" id="ai-pick">
+        </div>
+        <div class="result">
+            <h2>Result</h2>
+            <h1 id="result-message"></h1>
+            <a href="hardmode.html"><button id="hard-mode-button" onclick="disableButton()" style="margin: 10px;">Hard Mode</button></a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function play(playerPick) {
+    // Generate AI's pick randomly
+    const aiPicks = ['rock', 'paper', 'scissor'];
+    const aiPick = aiPicks[Math.floor(Math.random() * aiPicks.length)];
+  
+    // Display player's and AI's picks
+    document.getElementById('ai-pick').src = `${aiPick}.png`;
+  
+    // Determine the result
+    let resultMessage;
+    if (playerPick === aiPick) {
+      resultMessage = "It's a tie!";
+    } else if (
+      (playerPick === 'rock' && aiPick === 'scissor') ||
+      (playerPick === 'paper' && aiPick === 'rock') ||
+      (playerPick === 'scissor' && aiPick === 'paper')
+    ) {
+      resultMessage = 'Player wins!';
+    } else {
+      resultMessage = 'AI wins!';
+    }
+  
+    // Display the result message
+    document.getElementById('result-message').textContent = resultMessage;
+    
+  }
+  function disableButton() {
+  document.getElementById('hard-mode-button').disabled = true;
+}
+
+</script>
+</body>
+</html>
