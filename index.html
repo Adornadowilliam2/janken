@@ -16,78 +16,35 @@
       <img src="media/font.png" alt="font">
     </div>
   </nav>
-    <div class="game-container">
+      <div class="game-container">
         <div class="player">
           <h2>Choose Your Pick</h2>
-            <div class="border">
+            <div class="pick">
                 <img src="media/rock.png" alt="Rock" onclick="play('rock')">
                 <img src="media/paper.png" alt="Paper" onclick="play('paper')">
                 <img src="media/scissor.png" alt="Scissor" onclick="play('scissor')">
             </div>
         </div>
-        <div class="ai">
+     
+       
+        <div class="choice-container">
+             <div class="playerchoice">
+            <h2>Player</h2>
+            <img src="" alt="Player Pick" id="player-pick">
+        </div>
+           <div class="aichoice">
             <h2>AI</h2>
             <img src="" alt="AI Pick" id="ai-pick">
         </div>
-        <div class="result">
-            <h2>Result:</h2>
-            <h1 id="result-message"></h1>
-            <button id="hardmode">Hard Mode</button>
         </div>
+        <div class="result">
+          <h2>Result:</h2>
+          <h1 id="result-message"></h1>
+          <button id="hardmode">Hard Mode</button>
+      </div>
     </div>
 </div>
-<script>
-  let hardmode = document.getElementById("hardmode");
-  let difficulty = false;
-  let imgAiPick =document.getElementById('ai-pick') 
 
-  hardmode.addEventListener("click", function(){
-    difficulty = true;
-    alert("Activated")
-    console.log(difficulty)
-    imgAiPick.src = ""
-  })
-  function play(playerPick) {
-  const aiPicks = ['rock', 'paper', 'scissor'];
-  let aiPick;
-
-  if(difficulty == false){
-    const random = Math.floor(Math.random() * aiPicks.length);
-    aiPick = aiPicks[random]
-  }else if(difficulty == true){
-    switch (playerPick) {
-      case "rock":
-        aiPick = "paper";
-        break;
-      case "paper":
-        aiPick = "scissor";
-        break;
-      case "scissor":
-        aiPick = "rock";
-        break;
-    }
-  }
-
-
-
-  
-
-  imgAiPick.src = `media/${aiPick}.png`;
-  
-
-  let resultMessage;
-  if (playerPick == aiPick) {
-    resultMessage = "It's a tie!";
-  } else if((playerPick == "rock" && aiPick == "scissor") || (playerPick == "paper" && aiPick == "rock") || (playerPick == "scissor" && aiPick == "paper")){
-    resultMessage = "You win!"
-  }else{  
-    resultMessage = 'AI win!';
-  }
-  
-  
-  document.getElementById('result-message').textContent = resultMessage;
-}
-
-</script>
 </body>
 </html>
+<script src="script.js"></script>

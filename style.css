@@ -8,7 +8,11 @@
 
 body {
   font-family: "Inconsolata", monospace;
+  background: #333;
+  text-align: center;
+  color: #fff;
 }
+
 nav {
   display: flex;
   align-items: center;
@@ -35,61 +39,31 @@ nav div {
 nav h1 {
   margin: 10px;
 }
+
 .game-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
-}
-
-.player,
-.ai,
-.result {
-  text-align: center;
-}
-
-.player img,
-.ai img {
-  width: 100px;
-  cursor: pointer;
-  margin: 10px auto;
-}
-
-.result-message {
-  font-weight: bold;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
-.border {
-  box-shadow: 5px 5px 5px black;
-  border-radius: 15px;
-  border: 2px black solid;
-  margin: 20px;
-}
-
-.ai {
-  border: 2px solid black;
-  background-color: #71b280;
-  background-image: linear-gradient(135deg, #71b280, #a8caba);
-  width: 200px;
-}
-
-.flex {
-  max-width: 800px;
-  box-sizing: content-box;
-  background-color: aliceblue;
-  margin: auto;
-}
-
-.flex div {
-  display: flex;
   flex-direction: column;
+}
+.game-container img {
+  width: 50px;
+  height: 50px;
+}
+
+.choice-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.choice-container div {
+  background-color: #008000;
+  margin: 10px;
 }
 
 @media (max-width: 400px) {
   .player img,
-  .ai img {
+  .aichoose img {
     width: 80px;
   }
 
