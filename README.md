@@ -1,5 +1,5 @@
-![Animated GIF](https://i.giphy.com/Cmr1OMJ2FN0B2.webp)
----
+![Janken Image]("https://media3.giphy.com/media/2FDBn9eGYMi2Y/giphy.gif")
+
 
 **My Rock, Paper Scissor Game**
 
