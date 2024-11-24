@@ -3,8 +3,8 @@ let difficulty = false;
 let imgAiPick = document.getElementById("ai-pick");
 let player = document.getElementById("player-pick");
 const aiPicks = ["rock", "paper", "scissor"];
-let shuffleInterval; // Declare this variable outside the functions to access it later
-
+let shuffleInterval;
+let btnhardmode = document.getElementById("hardmode");
 hardmode.addEventListener("click", function () {
   difficulty = true;
   alert("Activated");
@@ -24,6 +24,7 @@ function shufflePicks() {
 function play(playerPick) {
   shufflePicks();
   let aiPick;
+  btnhardmode.disabled = true;
 
   if (!difficulty) {
     const random = Math.floor(Math.random() * aiPicks.length);
@@ -63,5 +64,6 @@ function play(playerPick) {
 
   setTimeout(() => {
     document.getElementById("result-message").textContent = resultMessage;
+    btnhardmode.disabled = false;
   }, 3000);
 }
