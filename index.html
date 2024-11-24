@@ -1,50 +1,55 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Janken</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="media/logo.png" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Janken</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="media/logo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <div>
+          <img src="media/logo.png" alt="logo" />
+          <img src="media/font.png" alt="font" />
+        </div>
+      </nav>
 
-  <nav>
-    <div>
-      <img src="media/logo.png" alt="logo">
-      <img src="media/font.png" alt="font">
-    </div>
-  </nav>
       <div class="game-container">
         <div class="player">
           <h2>Choose Your Pick</h2>
-            <div class="pick">
-                <img src="media/rock.png" alt="Rock" onclick="play('rock')">
-                <img src="media/paper.png" alt="Paper" onclick="play('paper')">
-                <img src="media/scissor.png" alt="Scissor" onclick="play('scissor')">
-            </div>
+          <div class="pick">
+            <img src="media/rock.png" alt="Rock" onclick="play('rock')" />
+            <img src="media/paper.png" alt="Paper" onclick="play('paper')" />
+            <img
+              src="media/scissor.png"
+              alt="Scissor"
+              onclick="play('scissor')"
+            />
+          </div>
         </div>
-     
-       
+
         <div class="choice-container">
-             <div class="playerchoice">
+          <div class="playerchoice">
             <h2>Player</h2>
-            <img src="" alt="Player Pick" id="player-pick">
-        </div>
-           <div class="aichoice">
+            <img src="" alt="Player Pick" id="player-pick" />
+          </div>
+          <div class="aichoice">
             <h2>AI</h2>
-            <img src="" alt="AI Pick" id="ai-pick">
+            <img src="" alt="AI Pick" id="ai-pick" />
+          </div>
         </div>
-        </div>
+
         <div class="result">
           <h2>Result:</h2>
           <h1 id="result-message"></h1>
           <button id="hardmode">Hard Mode</button>
+        </div>
       </div>
-    </div>
-</div>
+    </main>
 
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-<script src="script.js"></script>

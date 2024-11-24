@@ -11,6 +11,7 @@ body {
   background: #333;
   text-align: center;
   color: #fff;
+  overflow: hidden;
 }
 
 nav {
@@ -59,6 +60,16 @@ nav h1 {
 .choice-container div {
   background-color: #008000;
   margin: 10px;
+}
+
+.game-container {
+  transform: scale(1.5);
+  margin-top: 5rem;
+}
+@media (max-width: 767px) {
+  .game-container {
+    transform: scale(1.1);
+  }
 }
 
 @media (max-width: 400px) {
