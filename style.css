@@ -68,7 +68,10 @@ nav h1 {
 }
 @media (max-width: 767px) {
   .game-container {
-    transform: scale(1.1);
+    transform: none;
+  }
+  .pick {
+    object-fit: contain;
   }
 }
 
